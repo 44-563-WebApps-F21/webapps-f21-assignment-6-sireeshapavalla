@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <title>Pass phraseby</title>
+        <h1>"Pass phraseby"</h1>
+        <h1>Sireesha Pavalla</h1>
+    </head>
+    <body>
+        <from>
+            <label for="form_secret">Enter the secret phrase</label>
+            <input type="password" value="Let me in" id="form_secret"><br><br>
+        
+            <label for="from_phrase">Enter a phrase</label>
+            <input type="text" id="from_phrase"><br><br>
+        
+            <input type="button" onclick="processPhrase()" value="Check the phrase">
+        </from>
+        
+        
+        <p id="result">correct: 0 wrong: 0</p>
+            <script>
+                correct = 0
+                wrong = 0
+                function processPhrase() {
+                    console.log("Getting form values")
+                    secret = document.getElementById("form_secret").value
+                    phrase = document.getElementById("from_phrase").value
+                    out = document.getElementById("result")
+                    if (secret == phrase) {
+                        correct = correct + 1
+                        alert("Access allowed")
+                    }
+                    else {
+                        wrong = wrong + 1
+                        alert("Access denied")
+                    }
+                    out.innerHTML = "correct: " + correct + "  wrong: " + wrong;
+        
+                }
+            </script>
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <title>This is Sixth Assignment of web Apps </title>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+                integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
+                integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
+                integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+                <style>
+                   
+                   header{
+                            color: rgb(125, 119, 214);
+                            background-color: rgb(154, 124, 175);
+                        }
+                        h2{
+                            background-color: rgb(61, 60, 71);
+                            color: rgb(115, 28, 150);
+                        }
+                        p{
+                            color: rgb(228, 154, 154);
+                        }
+                    
+                </style>
+                </head>
+             <h1>Pass phrase by Sireesha Pavalla</h1>
+            <body>
+            
+            <h2>Getting input</h2>
+            
+            <form>
+               
+                <label for="form1_pwd">Enter the secret phrase</label>
+                <input value = "Let me in" type ="password" id="form1_pwd" name="form1_pwd" autofocus> <br> 
+                
+                <label for="form1_guess">Enter a phrase</label>
+                <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+            
+                <p id ="result" > Result </p>
+            
+                
+                <input type="button" onclick="processPhrase()" value="Check the phrase">
+            
+            </form>
+            
+            
+            <p id="guessresult" >Count of correct/wrongs </p>
+            
+            <script> 
+            var correct = 0
+            var wrong = 0
+            function processPhrase(){
+                
+                console.log("Getting guess values")
+                secret = document.getElementById("form1_pwd").value
+                guess = document.getElementById("form1_guess").value
+                confirmed = confirm("Are these the secret word and guess values? "+secret+" and "+guess)
+                
+                out = document.getElementById("guessresult")
+                if(secret==guess){
+                    correct++;
+                    out.innerHTML = "Access allowed ! Count of Corrects = "+correct+ 
+                    "\nCount of Wrongs = "+wrong
+                } else {
+                    wrong++;
+                    out.innerHTML = "Access denied ! Count of Corrects = "+correct+ 
+                    "\nCount of Wrongs = "+wrong
+                }
+            }
+            </script>
+            <br>
+            <div class="container">
+                <img src="ant.jpg" height="200" width="200" onclick="newImage()" id="animalimage">
+                 <script>
+                    
+                    var usingImage=1;
+                    function newImage(){
+                    switch(usingImage){
+                       
+                                 case 1:
+                                    document.getElementById("animalimage").src="ant.jpg";
+                                     usingImage=2;
+                                     break;
+                                 case 2:
+                                 document.getElementById("animalimage").src="bat.jpg";
+                                     usingImage=3;
+                                     break;
+                                 case 3:
+                                 document.getElementById("animalimage").src="lion.jpg";
+                                     usingImage=4;
+                                     break;
+                                 default :
+                                 document.getElementById("animalimage").src="ant.jpg"
+                                 usingImage=1;
+                                 break;
+                             }
+                            }
+                  </script>
+                  </div>
+            </body>
+            </html> 
+    </body>
+    </html>
